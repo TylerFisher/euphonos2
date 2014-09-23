@@ -1,0 +1,289 @@
+@import "less/lib/bootstrap/bootstrap";
+@import "less/lib/font-awesome/font-awesome";
+@import "less/lib/prefixer";
+@import "less/adhesion";
+@import "less/share-modal.less";
+
+/* Variables */
+@brand-primary: #3D9970;
+
+/* Mixins */
+.center{
+    text-align: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+}
+
+/* Layout */
+h1,h2,h3,h4,h5,h6,p,a,span,ul,ol,li {
+    font-family: 'freight-sans-pro', Helvetica Neue, Helvetica, Arial, sans-serif;
+}
+
+a {
+
+}
+
+.main-content {
+    padding-bottom: 50px;
+}
+
+/* HTML Elements */
+.gist {
+    pre {
+        white-space: pre;
+    }
+}
+
+a {
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+
+header {
+    background-color: @brand-primary;
+    color: white;
+    padding-bottom: 25px;
+    margin-bottom: 10px;
+
+    @media (min-width: 600px) {
+        margin-bottom: 50px;
+    }
+}
+
+.title {
+    text-align: center;
+
+    > h1 {
+        text-transform: uppercase;
+        font-size: 120px;
+        font-weight: 700;
+
+        @media (max-width: @screen-sm) {
+            font-size: 48px;
+        }
+        @media (min-width: @screen-sm) and (max-width: @screen-md) {
+            font-size: 80px;
+        }
+    }
+    > h4 {
+
+        font-size: 40px;
+        a {
+            color: white;
+            text-decoration: underline;
+        }
+
+        @media (max-width: @screen-sm) {
+            font-size: 24px;
+        }
+        @media (min-width: @screen-sm) and (max-width: @screen-md) {
+            font-size: 32px;
+        }
+    }
+}
+
+.main {
+    h2 {
+        color: @brand-primary;
+        font-size: 24px;
+        text-transform: uppercase;
+        font-weight: 700;
+
+        @media (min-width: 600px) {
+            margin: 20px 0;
+            font-size: 36px;
+        }
+
+    }
+    p {
+        font-size: 18px;
+        line-height: 1.6em;
+        @media (min-width: 600px) {
+            margin: 15px 0;
+            font-size: 24px;
+        }
+    }
+}
+
+.post-preview {
+    position: relative;
+    font-size: 28px;
+
+    &:nth-child(9n+1) {
+        background-color: @brand-primary;
+    }
+    &:nth-child(9n+2) {
+        background-color: darken(@brand-primary, 5%);
+    }
+    &:nth-child(9n+3) {
+        background-color: darken(@brand-primary, 10%);
+    }
+    &:nth-child(9n+4) {
+        background-color: darken(@brand-primary, 15%);
+    }
+    &:nth-child(9n+5) {
+        background-color: darken(@brand-primary, 20%);
+    }
+    &:nth-child(9n+6) {
+        background-color: darken(@brand-primary, 15%);
+    }
+    &:nth-child(9n+7) {
+        background-color: darken(@brand-primary, 10%);
+    }
+    &:nth-child(9n+8) {
+        background-color: darken(@brand-primary, 5%);
+    }
+    &:nth-child(9n+9) {
+        background-color: @brand-primary;
+        margin-bottom: 15px;
+    }
+    &:nth-child(9n+10) {
+        background-color: @brand-primary;
+    }
+
+    h2 {
+        color: white;
+        text-transform: uppercase;
+        font-weight: 700;
+        padding: 15px;
+        margin: 0 35px 0 0;
+    }
+
+    a {
+        color: white;
+    }
+
+    &:hover {
+        background-color: darken(@brand-primary, 30%);
+        transition: all 0.5s;
+    }
+
+    span {
+        color: white;
+        float: right;
+        width: 8%;
+        height: 50%;
+        overflow: auto;
+        margin: auto;
+        position: absolute;
+        top: 10px; bottom: 0; right: 0;
+    }
+
+    @media (max-width: 600px) {
+        h2, span {
+            font-size: 20px;
+        }
+    }
+}
+
+.m-scene .scene_element {
+  -webkit-animation-duration: 0.25s;
+  -webkit-transition-timing-function: ease-in;
+  -webkit-animation-fill-mode: both;
+}
+
+.m-scene .scene_element--fadein {
+  -webkit-animation-name: fadeIn;
+}
+
+.m-scene.is-exiting .scene_element {
+  -webkit-animation-direction: alternate-reverse;
+}
+
+/*
+ * Keyframes
+ */
+@-webkit-keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+/* soundcite - v0.3.0 - 2014-06-16
+ * Copyright (c) 2014 Tyler J. Fisher and Northwestern University Knight Lab
+ */
+
+/*PLAYER CHROME*/
+
+@-webkit-keyframes spin {
+    from { -webkit-transform: rotate(0deg); opacity: 0.4; }
+    50%  { -webkit-transform: rotate(180deg); opacity: 1; }
+    to   { -webkit-transform: rotate(360deg); opacity: 0.4; }
+}
+
+@-moz-keyframes spin {
+    from { -moz-transform: rotate(0deg); opacity: 0.4; }
+    50%  { -moz-transform: rotate(180deg); opacity: 1; }
+    to   { -moz-transform: rotate(360deg); opacity: 0.4; }
+}
+
+@-ms-keyframes spin {
+    from { -ms-transform: rotate(0deg); opacity: 0.4; }
+    50%  { -ms-transform: rotate(180deg); opacity: 1; }
+    to   { -ms-transform: rotate(360deg); opacity: 0.4; }
+}
+
+@-o-keyframes spin {
+    from { -o-transform: rotate(0deg); opacity: 0.4; }
+    50%  { -o-transform: rotate(180deg); opacity: 1; }
+    to   { -o-transform: rotate(360deg); opacity: 0.4; }
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); opacity: 0.2; }
+    50%  { transform: rotate(180deg); opacity: 1; }
+    to   { transform: rotate(360deg); opacity: 0.2; }
+}
+
+.soundcite-loaded {
+    border-radius: 6px;
+    padding: 0 5px 0 5px;
+    display: inline-block;
+    cursor: pointer;
+    background: rgba(0,0,0,.1);
+}
+
+.soundcite-loaded:before {
+    display: inline-block;
+    content: "";
+    vertical-align: -10%;
+    margin-right: 0.25em;
+}
+
+.soundcite-loading:before {
+    margin-right: 0.5em;
+    font-size: 0.7em;
+    position: relative;
+    top: -.05em;
+    height: 0.75em;
+    width: 0.75em;
+    border: 2px solid #000;
+    border-right-color: transparent;
+    border-radius: 50%;
+    -webkit-animation: spin 1s linear infinite;
+    -moz-animation: spin 1s linear infinite;
+    -ms-animation: spin 1s linear infinite;
+    -o-animation: spin 1s linear infinite;
+    animation: spin 1s linear infinite;
+}
+
+.soundcite-play:before {
+    font-size: 0.9em;
+    position: relative;
+    top: -.05em;
+    border: 0.5em solid transparent;
+    border-left: 0.75em solid black;
+}
+
+.soundcite-pause:before {
+    font-size: 0.9em;
+    position: relative;
+    top: -.05em;
+    height: 1em;
+    border-left: .75em double black;
+    border-right: .5em solid transparent;
+}

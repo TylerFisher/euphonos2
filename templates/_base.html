@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>{{ COPY.content.project_name }}</title>
+
+    <!-- META TAGS -->
+    {% include '_meta.html' %}
+
+    <!-- CHARTBEAT -->
+    <script type="text/javascript">var _sf_startpt=(new Date()).getTime()</script>
+
+    <!-- FONTS -->
+    {% include '_fonts.html' %}
+
+    <!-- CSS -->
+    {{ CSS.push('less/app.less') }}
+    {% block extra_css %}{% endblock extra_css %}
+    {{ CSS.render('css/app.min.css') }}
+
+    <!-- JS -->
+    {{ JS.push('js/lib/modernizr.js') }}
+    {{ JS.render('js/app-header.min.js') }}
+
+    {% include '_social_tags.html' %}
+
+    {% block extra_head %}
+    {% endblock extra_head %}
+</head>
+<body>
+
+    {% block outer_content %}
+
+    {% block header_content %}
+    <header>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 title">
+                    <h1>Euphonos</h1>
+                    <h4>An experiment in short-form music writing by <a href="http://twitter.com/tylrfishr">Tyler Fisher</a></h4>
+                </div>
+            </div>
+        </div>
+    </header>
+    {% endblock header_content %}
+
+    <article id="content" class="m-scene">
+        <div class="container main-content scene_element scene_element--fadein">
+           {% block content %}
+           {% endblock content %}
+        </div>
+    </article>
+
+    <footer>
+        <div class="primary">
+        </div>
+        <div class="secondary">
+        </div>
+    </footer>
+
+    {% endblock outer_content %}
+
+    {{ JS.push('js/lib/jquery.js') }}
+    {{ JS.push('js/lib/underscore.js') }}
+    {{ JS.push('js/lib/jquery.smoothstate.js') }}
+    {{ JS.push('js/lib/soundcite.js') }}
+    {{ JS.push('js/app_config.js') }}
+    {{ JS.push('js/copy.js') }}
+    {{ JS.push('js/console.js') }}
+    {{ JS.push('js/templates.js') }}
+    {{ JS.push('js/app.js') }}
+    {% block extra_foot_js %}{% endblock extra_foot_js %}
+    {{ JS.push('js/analytics.js') }}
+    {{ JS.render('js/app-footer.min.js') }}
+
+    {% block extra_foot %}
+    {% endblock extra_foot %}
+
+</body>
+</html>
