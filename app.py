@@ -24,12 +24,18 @@ def index():
     with open('data/featured.json') as f:
         context['featured'] = json.load(f)
 
+    return render_template('index.html', **context)
+
+@app.route('/about')
+def about():
+    context = make_context()
+
     f = codecs.open("posts/intro.md", mode="r", encoding="utf-8")
     contents = f.read()
     html = markdown.markdown(contents)
     context['markdown'] = Markup(html)
 
-    return render_template('index.html', **context)
+    return render_template('post.html', **context)
 
 @app.route('/posts/<string:slug>')
 def _post(slug):
