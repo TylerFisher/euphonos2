@@ -117,6 +117,7 @@ header {
 .post-preview {
     position: relative;
     font-size: 28px;
+    padding: 30px 0;
 
     &:nth-child(9n+1) {
         background-color: @brand-primary;
@@ -153,8 +154,8 @@ header {
     h2 {
         color: white;
         text-transform: uppercase;
+        text-align: center;
         font-weight: 700;
-        padding: 15px;
         margin: 0 35px 0 0;
     }
 
@@ -165,17 +166,6 @@ header {
     &:hover {
         background-color: darken(@brand-primary, 30%);
         transition: all 0.5s;
-    }
-
-    span {
-        color: white;
-        float: right;
-        width: 8%;
-        height: 50%;
-        overflow: auto;
-        margin: auto;
-        position: absolute;
-        top: 10px; bottom: 0; right: -10px;
     }
 
     @media (max-width: 600px) {
