@@ -7,9 +7,11 @@ Commands for rendering various parts of the app stack.
 from glob import glob
 import os
 
+import copytext
 from fabric.api import local, task
 
 import app
+import app_config
 
 @task
 def less():
@@ -76,7 +78,7 @@ def render_all():
     app_config_js()
     copytext_js()
 
-    compiled_includes = {} 
+    compiled_includes = {}
 
     for rule in app.app.url_map.iter_rules():
         rule_string = rule.rule
@@ -121,3 +123,48 @@ def render_all():
         with open(filename, 'w') as f:
             f.write(content.encode('utf-8'))
 
+    return compiled_includes
+
+@task
+def render_posts(compiled_includes):
+    from flask import g, url_for
+    from render_utils import make_context
+
+    context = make_context()
+
+    local('rm -rf .posts_html')
+
+    posts = list(context['COPY']['index'])
+
+    compiled_includes = compiled_includes or {}
+
+    for post in posts:
+        post = dict(zip(post.__dict__['_columns'], post.__dict__['_row']))
+        slug = post.get('slug')
+
+        with app.app.test_request_context():
+            path = '%s/index.html' % url_for('_post', slug=slug)
+
+        with app.app.test_request_context(path=path):
+            print 'Rendering %s' % path
+
+            g.compile_includes = True
+            g.compiled_includes = compiled_includes
+
+            view = app.__dict__['_post']
+            content = view(slug)
+
+            # compiled_includes = g.compiled_includes
+
+        path = '.posts_html%s' % path
+
+        # Ensure path exists
+        head = os.path.split(path)[0]
+
+        try:
+            os.makedirs(head)
+        except OSError:
+            pass
+
+        with open(path, 'w') as f:
+            f.write(content.encode('utf-8'))

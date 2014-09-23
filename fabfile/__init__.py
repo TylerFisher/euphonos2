@@ -168,9 +168,12 @@ def deploy(remote='origin'):
             servers.deploy_confs()
 
     update()
-    render.render_all()
+    compiled_includes = render.render_all()
+    render.render_posts(compiled_includes)
     _gzip('www', '.gzip')
     _deploy_to_s3()
+    _gzip('.posts_html', '.posts_gzip')
+    _deploy_to_s3('.posts_gzip')
 
 """
 Destruction

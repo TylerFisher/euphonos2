@@ -31,11 +31,11 @@ def index():
 
     return render_template('index.html', **context)
 
-@app.route('/post/<string:slug>')
+@app.route('/posts/<string:slug>')
 def _post(slug):
     context = make_context()
 
-    f = codes.open("posts/%s.md" % slug, mode="r", encoding="utf-8")
+    f = codecs.open("posts/%s.md" % slug, mode="r", encoding="utf-8")
     contents = f.read()
     html = markdown.markdown(contents)
     context['markdown'] = Markup(html)

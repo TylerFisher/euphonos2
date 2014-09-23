@@ -43,7 +43,7 @@ PRODUCTION_S3_BUCKETS = [
 STAGING_S3_BUCKETS = [
     {
         'bucket_name': 'stage.tylerjfisher.com',
-        'region': 'us-east-1'
+        'region': 'us-west-2'
     }
 ]
 
