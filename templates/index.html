@@ -3,7 +3,15 @@
 {% block content %}
 <div class="row">
     <div class="col-md-8 col-md-offset-2 main">
-        {{ markdown }}
+        {% for row in COPY.index %}
+
+                <div class="post-preview">
+                    <a href="posts/{{ row.slug }}">
+                        <h2>{{ row.artist|smarty }} - &ldquo;{{ row.title|smarty }}&rdquo;</h2>
+                        <span class="fa fa-arrow-circle-right"></span>
+                    </a>
+                </div>
+        {% endfor %}
     </div>
 </div>
 {% endblock %}
