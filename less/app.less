@@ -21,38 +21,15 @@ body {
     overflow-x: hidden;
 }
 
-/* Layout */
 h1,h2,h3,h4,h5,h6,p,a,span,ul,ol,li {
     font-family: 'freight-sans-pro', Helvetica Neue, Helvetica, Arial, sans-serif;
 }
 
-a {
-
-}
-
-.main-content {
-    padding-bottom: 50px;
-}
-
-/* HTML Elements */
-.gist {
-    pre {
-        white-space: pre;
-    }
-}
-
-a {
-    &:hover {
-        text-decoration: none;
-    }
-}
-
-
 header {
-    background-color: @brand-primary;
+    padding-top: 25px;
+    background-color: lighten(@brand-primary, 5%);
     color: white;
-    padding-bottom: 25px;
-    border-bottom: 5px solid darken(@brand-primary, 30%);
+    padding-bottom: 50px;
 
     @media (min-width: 600px) {
     }

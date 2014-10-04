@@ -3,12 +3,8 @@
 {% block content %}
 {% for row in COPY.index %}
 <div class="post-preview">
-    <a href="posts/{{ row.slug }}">
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2">
-                <h2>{{ row.artist|smarty }} - &ldquo;{{ row.title|smarty }}&rdquo;</h2>
-            </div>
-        </div>
+    <a href="posts/intro">
+        <h2>{{ row.artist|smarty }} - &ldquo;{{ row.title|smarty }}&rdquo;</h2>
     </a>
 </div>
 {% endfor %}

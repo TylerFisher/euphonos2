@@ -32,21 +32,15 @@
     {% block outer_content %}
 
     {% block header_content %}
-    <header>
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-12 title">
-                    <h1><a href="/">Euphonos</a></h1>
-                    <h4>An experiment in short-form music writing by <a href="http://twitter.com/tylrfishr">Tyler Fisher</a></h4>
-                    <h4><a href="/about">What's This?</a></h4>
-                </div>
-            </div>
-        </div>
+    <header class="title">
+        <h1><a href="/">Euphonos</a></h1>
+        <h4>An experiment in short-form music writing by <a href="http://twitter.com/tylrfishr">Tyler Fisher</a></h4>
+        <h4><a href="/about">What's This?</a></h4>
     </header>
     {% endblock header_content %}
 
     <article id="content" class="m-scene">
-        <div class="container-fluid main-content scene_element scene_element--fadein">
+        <div class="main-content scene_element scene_element--fadein">
            {% block content %}
            {% endblock content %}
         </div>
