@@ -1,0 +1,5 @@
+On the whole, Earl Sweatshirt&rsquo;s debut album *Doris* struggled to stick with me. No doubt, Earl&rsquo;s verbal kinesthetics are mind-boggling and impressive. I struggle to keep up with him sometimes, and others I have to pull up the lyrics and do a close reading to figure out what the hell is going on. 
+
+Rappers who can make you sit down with their lyrics and analyze them are bound for some magical moments when the music matches them. &ldquo;Hive&rdquo; is the perfect song for Earl. It sits back and almost drags on the beat, letting Earl clobber the beat with his lazy drawl, twisting syllable after syllable until he pulls off near [holorimes](http://en.wikipedia.org/wiki/Holorime). 
+
+So when is this song at its best? At its most stripped down, when the bassline goes away and leaves <span class="soundcite" data-start="0" data-end="" data-url="/assets/audio/hive_drop.mp3">just the rickety beat</span> as the backdrop for Earl's monotone.
