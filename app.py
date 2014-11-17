@@ -41,6 +41,12 @@ def about():
 def _post(slug):
     context = make_context()
 
+    index = context['COPY']['index']
+
+    for row in index:
+        if slug == row['slug']:
+            context['post_data'] = row
+
     f = codecs.open("posts/%s.md" % slug, mode="r", encoding="utf-8")
     contents = f.read()
     html = markdown.markdown(contents)
