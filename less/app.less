@@ -7,6 +7,14 @@
 /* Variables */
 @brand-primary: #3D9970;
 
+body, h1, h2, h3, h4, h5, h6 {
+    font-family: 'freight-sans-pro';
+}
+
+a {
+    color: @brand-primary;
+}
+
 /* Mixins */
 .center{
     text-align: center;
@@ -17,196 +25,67 @@
     right: 0;
 }
 
-body {
-    overflow-x: hidden;
-}
+.wrapper {
+    clear: both;
+    display: table;
+    width: 100vw;
+    height: 100vh;
 
-h1,h2,h3,h4,h5,h6,p,a,span,ul,ol,li {
-    font-family: 'freight-sans-pro', Helvetica Neue, Helvetica, Arial, sans-serif;
-}
+    #content {
+        display: table-cell;
+        width: 75vw;
 
-header {
-    padding-top: 25px;
-    background-color: lighten(@brand-primary, 5%);
-    color: white;
-    padding-bottom: 50px;
-
-    @media (min-width: 600px) {
-    }
-}
-
-.title {
-    text-align: center;
-
-    > h1 {
-        text-transform: uppercase;
-        font-size: 120px;
-        font-weight: 700;
-
-        a {
-            color: white;
-        }
-
-        @media (max-width: @screen-sm) {
-            font-size: 48px;
-        }
-        @media (min-width: @screen-sm) and (max-width: @screen-md) {
-            font-size: 80px;
+        .main-content {
+            padding: 50px 100px;
         }
     }
-    > h4 {
 
-        font-size: 40px;
-        a {
-            color: white;
-            text-decoration: underline;
-        }
-
-        @media (max-width: @screen-sm) {
-            font-size: 24px;
-        }
-        @media (min-width: @screen-sm) and (max-width: @screen-md) {
-            font-size: 32px;
-        }
-    }
-}
-
-.main {
-    h2 {
-        color: @brand-primary;
-        font-size: 24px;
-        text-transform: uppercase;
-        font-weight: 700;
-
-        @media (min-width: 600px) {
-            margin: 20px 0;
-            font-size: 36px;
-        }
-
-    }
-    p {
-        font-size: 18px;
-        line-height: 1.6em;
-        @media (min-width: 600px) {
-            margin: 15px 0;
-            font-size: 24px;
-        }
-    }
-}
-
-.post-preview {
-    position: relative;
-    font-size: 28px;
-    padding: 30px 0;
-
-    &:nth-child(8n+1) {
-        background-color: @brand-primary;
-    }
-    &:nth-child(8n+2) {
-        background-color: darken(@brand-primary, 5%);
-    }
-    &:nth-child(8n+3) {
-        background-color: darken(@brand-primary, 10%);
-    }
-    &:nth-child(8n+4) {
-        background-color: darken(@brand-primary, 15%);
-    }
-    &:nth-child(8n+5) {
-        background-color: darken(@brand-primary, 20%);
-    }
-    &:nth-child(8n+6) {
-        background-color: darken(@brand-primary, 15%);
-    }
-    &:nth-child(8n+7) {
-        background-color: darken(@brand-primary, 10%);
-    }
-    &:nth-child(8n+8) {
-        background-color: darken(@brand-primary, 5%);
-    }
-    &:nth-child(8n+9) {
-        background-color: @brand-primary;
+    .title {
+        background: @brand-primary;
+        padding: 20px;
+        width:25vw;
+        height: 100%;
+        position: fixed;
     }
 
-    h2 {
-        color: white;
+    .stuff {
+        position: relative;
+        top: 50%;
+        -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
+    }
+    h1 {
+        font-size: 52px;
         text-transform: uppercase;
         text-align: center;
-        font-weight: 700;
-        margin: 0 35px 0 0;
+        line-height: 1;
+        font-weight: bold;
+        margin: 0 0 @line-height-computed;
+        a {
+            color: white;
+            text-decoration: none;
+        }
     }
 
-    a {
-        color: white;
-    }
-
-    &:hover {
-        background-color: darken(@brand-primary, 30%);
-        transition: all 0.5s;
-    }
-
-    @media (max-width: 600px) {
-        h2, span {
-            font-size: 20px;
+    h4 {
+        color: #222;
+        font-size: 28px;
+        line-height: 32px;
+        font-weight: normal;
+        a {
+            color: white;
         }
     }
 }
 
-.m-scene .scene_element {
-  -webkit-animation-duration: 0.5s;
-  -webkit-transition-timing-function: ease-in;
-  -webkit-animation-fill-mode: both;
-}
+.post {
+    h2 {
+        font-size: 48px;
+        margin: 0;
+    }
 
-.m-scene .scene_element--fadein {
-  -webkit-animation-name: fadeIn;
-}
-
-.m-scene.is-exiting .scene_element {
-  -webkit-animation-direction: alternate-reverse;
-}
-
-/*
- * Keyframes
- */
-@-webkit-keyframes fadeIn {
-  0% { opacity: 0; }
-  100% { opacity: 1; }
-}
-
-/* soundcite - v0.3.0 - 2014-06-16
- * Copyright (c) 2014 Tyler J. Fisher and Northwestern University Knight Lab
- */
-
-/*PLAYER CHROME*/
-
-@-webkit-keyframes spin {
-    from { -webkit-transform: rotate(0deg); opacity: 0.4; }
-    50%  { -webkit-transform: rotate(180deg); opacity: 1; }
-    to   { -webkit-transform: rotate(360deg); opacity: 0.4; }
-}
-
-@-moz-keyframes spin {
-    from { -moz-transform: rotate(0deg); opacity: 0.4; }
-    50%  { -moz-transform: rotate(180deg); opacity: 1; }
-    to   { -moz-transform: rotate(360deg); opacity: 0.4; }
-}
-
-@-ms-keyframes spin {
-    from { -ms-transform: rotate(0deg); opacity: 0.4; }
-    50%  { -ms-transform: rotate(180deg); opacity: 1; }
-    to   { -ms-transform: rotate(360deg); opacity: 0.4; }
-}
-
-@-o-keyframes spin {
-    from { -o-transform: rotate(0deg); opacity: 0.4; }
-    50%  { -o-transform: rotate(180deg); opacity: 1; }
-    to   { -o-transform: rotate(360deg); opacity: 0.4; }
-}
-
-@keyframes spin {
-    from { transform: rotate(0deg); opacity: 0.2; }
-    50%  { transform: rotate(180deg); opacity: 1; }
-    to   { transform: rotate(360deg); opacity: 0.2; }
+    font-size: 20px;
 }
 
 .soundcite-loaded {

@@ -30,39 +30,31 @@
 <body>
 
     {% block outer_content %}
+    <div class="wrapper">
 
     {% block header_content %}
     <header class="title">
-        <h1><a href="/">Euphonos</a></h1>
-        <h4>An experiment in short-form music writing by <a href="http://twitter.com/tylrfishr">Tyler Fisher</a></h4>
-        <h4><a href="/about">What's This?</a></h4>
+        <div class="stuff">
+            <h1><a href="/">Euphonos</a></h1>
+        </div>
     </header>
     {% endblock header_content %}
 
-    <article id="content" class="m-scene">
-        <div class="main-content scene_element scene_element--fadein">
+    <article id="content">
+        <div class="main-content">
            {% block content %}
            {% endblock content %}
         </div>
     </article>
 
-    <footer>
-        <div class="primary">
-        </div>
-        <div class="secondary">
-        </div>
-    </footer>
+    </div>
 
     {% endblock outer_content %}
 
     {{ JS.push('js/lib/jquery.js') }}
-    {{ JS.push('js/lib/underscore.js') }}
-    {{ JS.push('js/lib/jquery.smoothstate.js') }}
     {{ JS.push('js/lib/soundcite.js') }}
     {{ JS.push('js/app_config.js') }}
     {{ JS.push('js/copy.js') }}
-    {{ JS.push('js/console.js') }}
-    {{ JS.push('js/templates.js') }}
     {{ JS.push('js/app.js') }}
     {% block extra_foot_js %}{% endblock extra_foot_js %}
     {{ JS.push('js/analytics.js') }}
