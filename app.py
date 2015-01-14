@@ -6,6 +6,7 @@ import json
 import argparse
 from flask import Flask, Markup, render_template
 import markdown
+from smartypants import smartypants
 
 import app_config
 from render_utils import make_context, smarty_filter, urlencode_filter
@@ -32,7 +33,7 @@ def about():
 
     f = codecs.open("posts/intro.md", mode="r", encoding="utf-8")
     contents = f.read()
-    html = markdown.markdown(contents)
+    html = markdown.markdown(smartypants(contents))
     context['markdown'] = Markup(html)
 
     return render_template('post.html', **context)

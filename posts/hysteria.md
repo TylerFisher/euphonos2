@@ -1,0 +1,5 @@
+I remember the exact moment.
+
+I was in the car with my mom as she drove me to the first jazz band practice of the year. I was in 7th grade, and my band director had asked me to learn the bass. It was better than the trombone I played the year before, but the bass wasn’t cool, not like my older brother’s guitar. The bass was just something people needed – utilitarian – and a service I could provide because I could read bass clef.
+
+Then Muse’s “Hysteria” came on the radio. And <span class="soundcite" data-start="0" data-end="" data-url="/assets/audio/hysteria_bass.mp3">that bassline</span> came on the radio. Suddenly, playing the bass was something to really get excited about. Music itself was something to get excited about. I learned that bassline as quickly as I could, and playing the bass became one of my favorite things in life. To this day, when I pick up a bass, it’s one of the first lines I play. I don’t particularly care for Muse anymore, but that bassline will always stick with me.
